@@ -59,7 +59,7 @@ opts_chunk$set(echo=T,message = F, error = F, warning = F, comment = NA, fig.ali
 ```{r,echo=FALSE}
 
 library(pacman)
-p_load(dplyr,lubridate,tidyr,ggplot2)
+p_load(dplyr,lubridate,tidyr,ggplot2,plotly)
 
 ```
 
@@ -150,7 +150,7 @@ select(cran,-(date:size))
 ```
 6. Elige aquellos registros en los que se haya descargado el paquete `plotly`, desde un sistema que ejecuta la versión de R 3.5.1
 ```{r}
-
+subset(cran,package=='plotly' & r_version=='3.5.1')
 ```
 6. Elige aquellas descargas realizadas desde España (ES), con versiones de R superiores a la 3.4.0
 ```{r}
